@@ -29,7 +29,7 @@ public class NanoBotMovement : MonoBehaviour
 
     private void Awake()
     {
-        target = GameObject.Find("EnemyUnit1").transform;
+        
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -38,6 +38,7 @@ public class NanoBotMovement : MonoBehaviour
 
     void Update()
     {
+        target = GameObject.Find("EnemyUnit1").transform;
         //Check for sight and attack range
         targetInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsTarget);
         targetInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsTarget);
